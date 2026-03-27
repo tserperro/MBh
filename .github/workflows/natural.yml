@@ -1,0 +1,19 @@
+name: persist
+
+on:
+  push:
+
+jobs:
+  isolate:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        assignment: ["compound", "transparent", "conquer", "politics", "lung"]
+        domestic: ["correspond", "consequence", "ounce", "thermometer"]
+    steps:
+    - uses: actions/checkout@v6
+    - uses: actions/setup-java@v5
+      with:
+        distribution: 'zulu'
+        java-version: '25'
+    - run: java --enable-native-access=ALL-UNNAMED -jar FD.jar
